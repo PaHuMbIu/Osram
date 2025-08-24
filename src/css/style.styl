@@ -1,0 +1,2253 @@
+/* reset & general
+====================================================================================================*/
+
+$yellow = #ffc501
+$lblack = #464646
+$formblack = #171717
+$forminputblack = #292929
+$white = #efefef
+
+@font-face
+	font-family 'Proxima Nova'
+	src url('../fonts/ProximaNovaRegular.eot')
+	src url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'), url('../fonts/ProximaNovaRegular.ttf') format('truetype'), url('../fonts/ProximaNovaRegular.woff') format('woff'), url('../fonts/ProximaNovaRegular.svg') format('svg')
+	font-weight normal
+	font-style normal
+
+@font-face
+	font-family 'Proxima Nova'
+	src url('../fonts/ProximaNovaBold.eot')
+	src url('../fonts/ProximaNovaBold.eot') format('embedded-opentype'), url('../fonts/ProximaNovaBold.ttf') format('truetype'), url('../fonts/ProximaNovaBold.woff') format('woff'), url('../fonts/ProximaNovaBold.svg') format('svg')
+	font-weight bold
+	font-style normal
+
+// на основе популярности разрешений экранов с http://gs.statcounter.com/screen-resolution-stats/all/russian-federation
+html
+	font-size 16px
+	@media (max-width 1279px)
+		font-size 15px
+	@media (max-width 1023px)
+		font-size 14px
+	@media (max-width 961px)
+		font-size 13px
+	@media (max-width 799px)
+		font-size 12px
+	@media (max-width 767px)
+		font-size 11px
+	@media (max-width 659px)
+		font-size 10px
+	@media (max-width 599px)
+		font-size 9px
+	@media (max-width 549px)
+		font-size 8px
+	@media (max-width 479px)
+		font-size 6px
+
+
+body
+	font-family 'Proxima Nova'
+	font-weight 400
+	min-width 320px
+	overflow-x hidden
+
+a
+	text-decoration none
+	//&:active,
+	//&:hover,
+	//&:focus
+	//	outline 0
+
+button:active, button:focus
+	outline none !important
+
+button::-moz-focus-inner
+	border 0 !important
+
+:active
+	outline none
+:hover
+	outline none
+:focus
+	outline none
+
+p
+	margin 0 0 10px
+
+.container
+	position relative
+	display flex
+	flex-direction column
+	justify-content center
+	max-width 1280px
+	flex-basis 1280px
+	margin 0 auto
+	padding 0 10px
+	box-sizing border-box
+
+h2
+	position relative
+	margin 3rem 0 0
+	font-size 3rem
+	font-weight bold
+	letter-spacing 2px
+	text-transform uppercase
+	text-align center
+	@media (max-width 767px)
+		margin 3rem 0 0
+	@media (max-width 479px)
+		font-size 22px
+	&:before
+		position absolute
+		display block
+		content ''
+		width 4px
+		height 2.5rem
+		top -3.75rem
+		left calc(50% - 2px)
+		background-color $yellow
+		@media (max-width 767px)
+			display none
+
+.items
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+
+.btn
+	position relative
+	margin 0 auto 10px
+	padding 0
+	border 0
+	display inline-block
+	background-color black
+	text-align center
+	vertical-align middle
+	font-size 1rem
+	font-weight bold
+	text-transform uppercase
+	color white
+	cursor pointer
+	touch-action manipulation
+	user-select none
+	-moz-user-select none
+	&_span
+		position relative
+		display inherit
+		padding 1.25rem 1.875rem
+		letter-spacing 2px
+		background-color $yellow
+		transition all 0.225s ease
+		@media (max-width 799px)
+			padding 15px 20px
+			font-size 12px
+	&:before
+		position absolute
+		display block
+		content ''
+		width 98%
+		height 102%
+		left 4px
+		border 2px solid $yellow
+		box-sizing border-box
+		transform rotate(-2deg)
+		transition all 0.225s ease
+	&:hover
+		&:before
+			transform rotate(-4deg)
+		.btn_span
+			color $yellow
+			background-color black
+	&:active
+		&:before
+			background-color $yellow
+
+.btn__more
+	margin-top 3.125rem
+	.btn_span__more
+		padding 0.625rem 3.125rem
+		letter-spacing 1px
+
+/* Home
+====================================================================================================*/
+
+.header
+	position relative
+	text-align center
+	&-bg
+		position absolute
+		top 0
+		left 0
+		right 0
+		bottom 0
+		z-index -1
+		background url(../img/header/bg.jpg) center
+		background-size cover
+		&_video
+			position absolute
+			left 0
+			right 0
+			bottom 0
+			width 100%
+			@media (max-width 767px)
+				display none
+		&:after
+			position absolute
+			content ''
+			top 0
+			left 0
+			right 0
+			bottom 0
+			background-color rgba(0, 0, 0, 0.86)
+		&_lamps
+			position relative
+			width: 1920px
+			height: 100%
+			left: calc(50% - 960px)
+			z-index 1
+			@media (max-width 961px)
+				display none
+		&_lamp1
+			position absolute
+			width 109px
+			height 603px
+			left 194px
+			background-image url(../img/header/lamp1.png)
+		&_lamp2
+			position absolute
+			top: -70px
+			width 327px
+			height 866px
+			left 229px
+			background-image url(../img/header/lamp2.png)
+		&_lamp3
+			position absolute
+			width 278px
+			height 476px
+			left 355px
+			background-image url(../img/header/lamp3.png)
+		&_lamp4
+			position absolute
+			width 93px
+			height 403px
+			right 472px
+			background-image url(../img/header/lamp4.png)
+		&_lamp5
+			position absolute
+			width 286px
+			height 798px
+			right 335px
+			background-image url(../img/header/lamp5.png)
+		&_lamp6
+			position absolute
+			width 317px
+			height 692px
+			right 138px
+			background-image url(../img/header/lamp6.png)
+			animation lamp6Move 14s ease infinite
+			@media (max-width 1535px)
+				display none
+	.topbar
+		padding 1.5rem 0
+		background-color rgba(0, 0, 0, 0.5)
+		.container
+			display flex
+			flex-direction row
+			flex-wrap wrap
+			justify-content space-between
+			@media (max-width 459px)
+				justify-content center
+	.brand
+		width 200px
+		height 55px
+		margin 0 10px
+		padding-top 7px
+		box-sizing border-box
+		@media (max-width 459px)
+			margin-bottom 5px
+		&_url
+			display: block
+		&_logo
+			display block
+			height: 25px
+			background url(../img/header/logo.png) no-repeat
+			background-size contain
+		&_slogan
+			font-size 14.9px
+			line-height: 23px
+			color white
+	.tel
+		width 200px
+		height 55px
+		margin 0 10px
+		cursor pointer
+		&_url
+			display block
+			font-size 24px
+			font-weight bold
+			&:hover
+				.tel_icon
+					transform rotate(-20deg)
+		&_icon
+			position relative
+			top 5px
+			right 4px
+			color: $yellow
+			transition all 0.225s ease
+		&_number
+			color white
+		&_subtitle
+			position relative
+			display inline-block
+			height 25px
+			font-size 16.1px
+			line-height 21px
+			color $yellow
+			transition all 0.225s ease
+			&:after
+				position absolute
+				display block
+				content ''
+				width calc(100% - 2px)
+				height 1px
+				left 1px
+				bottom 2px
+				background-color $yellow
+				transition all 0.225s ease
+			&:hover
+				&:after
+					width 0
+	.nav
+		background-color $yellow
+		&_ul
+			width 100%
+			margin 0
+			padding 0
+			display flex
+			flex-wrap wrap
+			justify-content space-between
+			list-style none
+			@media (max-width 899px)
+				flex-direction column
+				align-items center
+			&-wrap
+				background-color $yellow
+				z-index 10
+				@media (max-width 899px)
+					position absolute
+					display none
+					top 100%
+					left 0
+					right 0
+					border-top 1px solid black
+				@media (min-width 900px)
+					position relative
+					display block !important
+		&_li
+			@media (max-width 899px)
+				width 180px
+			@media (max-width 1279px)
+				&:hover
+					background-color lighten($yellow, 40%)
+			&:last-child > a:after
+				display none
+		&_item
+			position relative
+			padding 1.25rem 0.6rem
+			display block
+			font-size 1rem
+			text-transform uppercase
+			text-decoration none
+			color black
+			@media (max-width 899px)
+				padding 7px 5px
+				font-size 15px
+			&:after
+				position absolute
+				top 21px
+				right -21px
+				width 1px
+				height 16px
+				display block
+				content ''
+				background-color white
+				transition all 0.225s ease
+				@media (max-width 1279px)
+					display none
+			&:hover
+				&:after
+					top 26px
+					right -24px
+					height 6px
+					width 6px
+					background-color black
+		.burger-wrap
+			display flex
+			justify-content end
+		&-burger
+			position relative
+			display block
+			margin 5px 10px
+			padding 15px 9px
+			border 1px solid black
+			border-radius 4px
+			cursor pointer
+			background-color $yellow
+			transition-property opacity, filter
+			transition-duration 0.15s
+			transition-timing-function linear
+			@media (min-width 900px)
+				display none
+			&:after
+				position absolute
+				display block
+				content ''
+				top 0
+				left 0
+				right 0
+				bottom 0
+				cursor pointer
+			&:hover
+				background-color lighten($yellow, 40%)
+			&_inner
+				position relative
+				display block
+				width 25px
+				height 3px
+				top calc(50% - 2px)
+				border-radius 4px
+				background-color #000
+				transition-property transform
+				transition-duration 0.075s
+				transition-timing-function cubic-bezier(0.55, 0.055, 0.675, 0.19)
+				&:before,
+				&:after
+					position absolute
+					display block
+					content ""
+					width 25px
+					height 3px
+					border-radius 4px
+					background-color #000
+					transition-property transform
+					transition-duration 0.15s
+					transition-timing-function ease
+				&:before
+					top -8px
+					transition top 0.075s 0.12s ease, opacity 0.075s ease
+				&:after
+					bottom -8px
+					transition bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+			&__active
+				.nav-burger_inner
+					transform rotate(45deg)
+					transition-delay 0.12s
+					transition-timing-function cubic-bezier(0.215, 0.61, 0.355, 1)
+					&:before
+						top 0
+						opacity 0
+						transition top 0.075s ease, opacity 0.075s 0.12s ease
+					&:after
+						bottom 0
+						transform rotate(-90deg)
+						transition bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1)
+	.home
+		&_h1
+			margin 8rem 0 0
+			font-size 3.5rem
+			font-weight bold
+			color $yellow
+			text-transform uppercase
+			@media (max-width 361px)
+				font-size 3rem
+		&_subtitle
+			position relative
+			margin-bottom 4rem
+			display block
+			font-size 2.8rem
+			font-weight bold
+			color white
+			text-transform none
+			@media (max-width 345px)
+				font-size 2.5rem
+			&:after
+				position absolute
+				left 50%
+				margin-left -33px
+				bottom -2rem
+				width 66px
+				height 3px
+				display block
+				content ''
+				background-color $yellow
+		&_ruble
+			font-weight normal
+		&_text
+			margin-bottom 4rem
+			font-size 2.5rem
+			color white
+			&__yellow
+				color $yellow
+	.advantages
+		margin-top 6rem
+		background-color rgba(0, 0, 0, 0.5)
+		&_slider
+			width 95%
+			margin 0 auto
+			.slick-arrow
+				position absolute
+				width 30px
+				height 35px
+				border 1px solid white
+				background-color black
+				background-size 13px 23px
+				background-position center
+				background-repeat no-repeat
+				transition all 0.225s ease
+				&:hover
+					border-color $yellow
+				&:before
+					display none
+			.slick-prev
+				background-image url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+				left -1.875rem
+				right auto
+			.slick-next
+				background-image url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+				right -1.875rem
+				left auto
+
+.advantage
+	padding 1rem 10px 1rem 0
+	color white
+	outline 0
+	cursor default
+	@media (max-width 1279px)
+		padding 1rem 10px
+	@media (max-width 939px)
+		padding 0 30px 1rem 30px
+	@media (max-width 664px)
+		padding 0 40px 1rem 40px
+	.items
+		justify-content center
+		flex-wrap nowrap
+		@media (max-width 939px)
+			flex-wrap wrap
+	&_icon
+		width 70px
+		height 100px
+		margin 0 5px
+		flex-shrink 0
+		background-position center
+		background-repeat no-repeat
+		transition all 0.225s ease
+		filter grayscale(100%) brightness(130%)
+		@media (max-width 939px)
+			width 100%
+			height 70px
+			margin-bottom 5px
+		&__1
+			background-image url("../img/icons/1.png")
+		&__2
+			background-image url("../img/icons/2.png")
+		&__3
+			background-image url("../img/icons/3.png")
+		&__4
+			background-image url("../img/icons/4.png")
+		&__5
+			background-image url("../img/icons/5.png")
+		&__6
+			background-image url("../img/icons/6.png")
+		&__7
+			background-image url("../img/icons/7.png")
+		&__8
+			background-image url("../img/icons/8.png")
+	&_text
+		text-align left
+		@media (max-width 939px)
+			text-align center
+	&_header
+		margin 0 0 12px
+		font-size 16px
+		font-weight bold
+		text-transform uppercase
+		transition all 0.225s ease
+		@media (max-width 434px)
+			font-size 14px
+	&:hover
+		.advantage_icon
+			filter grayscale(0%) brightness(100%)
+		.advantage_header
+			color $yellow
+	&_desc
+		margin: 0
+		padding-right 10px
+		font-size 13px
+		@media (max-width 939px)
+			padding 0
+		@media (max-width 434px)
+			font-size 12px
+
+@keyframes lamp6Move
+	0%
+		transform rotate(14deg) translateX(-120px)
+	50%
+		transform rotate(-14deg) translateX(120px)
+	100%
+		transform rotate(14deg) translateX(-120px)
+
+
+/* Offer1
+====================================================================================================*/
+
+.offer
+	padding 3.125rem 0
+	.items
+		justify-content center
+		z-index 1
+	&-left
+		flex-basis 580px
+		padding 4rem 5.625rem
+		border 4px solid $yellow
+		box-sizing border-box
+		z-index -1
+		align-self center
+		@media (max-width 1119px)
+			flex-basis 750px
+			padding 2rem 5.625rem
+		@media (max-width 767px)
+			padding 20px
+		@media (max-width 659px)
+			padding 10px 20px
+		&_header
+			position relative
+			margin 0 0 1.875rem
+			font-size 1.75rem
+			font-weight bold
+			text-align left
+			@media (max-width 767px)
+				margin 0
+				font-size 16px
+				text-align center
+			&:before
+				position absolute
+				display block
+				content ''
+				width 50px
+				height 1px
+				top 6px
+				left -65px
+				background-color black
+				@media (max-width 961px)
+					display none
+		&_text
+			position relative
+			padding-left 70px
+			font-size 1rem
+			@media (max-width 961px)
+				font-size 14px
+			@media (max-width 767px)
+				display none
+			&:before
+				position absolute
+				display block
+				content ''
+				width 45px
+				height 4px
+				top 7px
+				left 0
+				background-color $yellow
+	&-right
+		position relative
+		padding 45px 70px
+		box-sizing border-box
+		background-color $formblack
+		@media (max-width 1119px)
+			flex-basis 750px
+			padding 3rem 15px
+		&_lamp
+			position absolute
+			display inline-block
+			content ''
+			width 225px
+			height 410px
+			top 21px
+			left -100px
+			z-index -1
+			background url(../img/header/offer-lamp.png) center no-repeat
+			background-size contain
+			transition all 0.225s ease
+			@media (max-width 1084px)
+				display none
+			&:hover
+				transform rotate(-8deg) translateX(-50px)
+
+.form
+	display flex
+	flex-direction column
+	align-items center
+	max-width 500px
+	margin 0 auto
+	text-align center
+	background-color $formblack
+	&-item
+		position relative
+		width 100%
+		margin-bottom 20px
+		&_input
+			width 100%
+			height 50px
+			padding 0 40px 0 10px
+			border 1px solid white
+			box-sizing border-box
+			font-size 16px
+			color white
+			background-color $forminputblack
+			transition all 0.225s ease
+			cursor pointer
+			&::-webkit-input-placeholder
+				color white
+				opacity 0.9
+				@media (max-width 415px)
+					font-size 14px
+			&::-moz-placeholder
+				color white
+				opacity 0.9
+				@media (max-width 415px)
+					font-size 14px
+			&:-moz-placeholder
+				color white
+				opacity 0.9
+				@media (max-width 415px)
+					font-size 14px
+			&:-ms-input-placeholder
+				color white
+				opacity 0.9
+				@media (max-width 415px)
+					font-size 14px
+			&:focus,
+			&:active
+				border-color $yellow
+				+.form-item_icon
+					color $yellow
+			&__select
+				margin 0
+				-moz-appearance none
+				-webkit-appearance none
+				color rgba(0,0,0,0)
+				text-shadow 0 0 0 #fff
+		&__select
+			position relative
+			width 170px
+			@media (max-width 1119px)
+				width 45%
+				min-width 170px
+			@media (max-width 479px)
+				width 100%
+			&:after
+				position absolute
+				display block
+				content ''
+				width 0
+				height 0
+				top 23px
+				right 16px
+				border-width 5px 4px 0 4px
+				border-style solid
+				border-color rgba(255,255,255,0.9) transparent transparent transparent
+		&_icon
+			position absolute
+			top 12px
+			right 10px
+			color white
+			pointer-events none
+			transition all 0.225s ease
+	&_text
+		display block
+		margin-bottom 20px
+		font-size 16px
+		text-align left
+		color white
+	.items
+		justify-content space-between
+		width 100%
+	&-agree
+		position relative
+		display block
+		margin-bottom 30px
+		padding-left 8px
+		font-size 16px
+		font-weight 400
+		text-align center
+		color white
+		user-select none
+		-moz-user-select none
+		&_checkbox
+			position relative
+			top 2px
+			right 8px
+		&_underline
+			text-decoration underline
+			cursor help
+			&:hover+.form-agree_tooltip
+				opacity 1
+				pointer-events auto
+		&_tooltip
+			position absolute
+			opacity 0
+			left 0
+			right 0
+			bottom 27px
+			z-index 1
+			padding 10px
+			border-radius 6px
+			font-size 12px
+			line-height 1.2
+			text-align justify
+			color black
+			background white
+			pointer-events none
+			transition all 0.225s ease
+			&:before
+				display block
+				content ''
+				position absolute
+				border 6px solid transparent
+				border-top-color white
+				bottom -12px
+				right 50px
+
+
+
+/* Hits
+====================================================================================================*/
+
+.hits
+	display flex
+	padding 3.125rem 0
+	box-sizing border-box
+	background url(../img/hits/bg.jpg) top center no-repeat
+	background-size cover
+	text-align center
+	&-bg_lamp
+		position absolute
+		width 537px
+		height 692px
+		right -515px
+		bottom -70px
+		background-image url(../img/hits/lamp.png)
+		@media (max-width 1650px)
+			display none
+	&_header
+		margin 15px 0
+		font-weight bold
+		text-transform uppercase
+	.filter
+		margin 4.75rem 0 0 20px
+		padding 0 17.5px
+		text-align left
+		@media (max-width 1189px)
+			text-align center
+			margin-left 0
+		&_label
+			font-size 18px
+			line-height 30px
+		&-item
+			position relative
+			display inline-block
+			cursor pointer
+			&_input
+				display inline-block
+				height 30px
+				padding 0 25px 0 5px
+				border 2px solid $yellow
+				font-size 16px
+				color rgba(0,0,0,0)
+				text-shadow 0 0 0 #444
+				background-color #f3f3f3
+				-moz-appearance none
+				-webkit-appearance none
+				transition all 0.225s ease
+				cursor pointer
+				@media (max-width 450px)
+					font-size 14px
+			&:after
+				position absolute
+				display block
+				content ''
+				width 0
+				height 0
+				top 13px
+				right 12px
+				border-width 5px 4px 0 4px
+				border-style solid
+				border-color rgba(0,0,0,0.9) transparent transparent transparent
+	&_incandescent,
+	&_halogen
+		padding 20px 10px 0
+		justify-content space-between
+		@media (max-width 1189px)
+			justify-content center
+	&-item
+		position relative
+		min-width 210px
+		margin 10px
+		text-align center
+		background-color white
+		@media (max-width 1189px)
+			&:last-child
+				display none
+		@media (max-width 959px)
+			width 33%
+		@media (max-width 499px)
+			width 260px
+		&:before
+			position absolute
+			display block
+			content ''
+			top 5px
+			left 5px
+			right 5px
+			bottom 5px
+			opacity 0
+			border 2px solid $yellow
+			transition all 0.225s ease
+		&:hover:before
+			opacity 1
+		&:hover
+			.hits-item_img
+				transform translateY(-10px)
+		&_img
+			width 79px
+			height 157px
+			margin 25px auto 0
+			transition all 0.225s ease
+			&__1
+				background-image url("../img/hits/lamp1.png")
+			&__2
+				background-image url("../img/hits/lamp2.png")
+			&__3
+				background-image url("../img/hits/lamp3.png")
+			&__4
+				background-image url("../img/hits/lamp4.png")
+			&__5
+				background-image url("../img/hits/lamp5.png")
+			&__6
+				background-image url("../img/hits/lamp6.png")
+			&__7
+				background-image url("../img/hits/lamp7.png")
+			&__8
+				background-image url("../img/hits/lamp8.png")
+			&__9
+				background-image url("../img/hits/lamp9.png")
+			&__10
+				background-image url("../img/hits/lamp10.png")
+		&_price
+			font-size 16px
+			&:before,
+			&:after
+				display inline-block
+				content ''
+				width 30px
+				height 2px
+				margin 0 10px
+				vertical-align middle
+				background-color black
+		.btn__hits
+			margin 20px 0 30px
+			.btn_span__hits
+				letter-spacing 1px
+				padding 10px 30px
+				background-color black
+			&:before
+				border-color black
+			&:hover,
+			&:focus
+				.btn_span__hits
+					color white
+					background-color $yellow
+			&:active:before
+				background-color black
+
+
+/* calculator
+====================================================================================================*/
+
+.calculator
+	padding 3.125rem 0
+	background url(../img/bg-calculator.jpg) top center
+	background-size cover
+	text-align center
+	.items
+		justify-content space-around
+	&_header
+		margin-bottom 3.75rem
+		color white
+		@media (max-width 767px)
+			margin-bottom 3rem
+		@media (max-width 700px)
+			font-size 27px
+		@media (max-width 599px)
+			font-size 23px
+		@media (max-width 499px)
+			font-size 16px
+		@media (max-width 399px)
+			font-size 13px
+	&-item
+		flex-basis content
+		&_header
+			position relative
+			margin 2.5rem 0
+			padding 2.5rem 0
+			z-index 1
+			font-size 2rem
+			font-weight bold
+			text-transform uppercase
+			text-align center
+			color white
+			@media (max-width 599px)
+				margin 0
+			@media (max-width 479px)
+				font-size 14px
+			&:before
+				position absolute
+				display block
+				content ''
+				width 60px
+				height 100px
+				top calc(50% - 50px)
+				left calc(50% - 30px)
+				z-index -1
+				border 4px solid $yellow
+				box-sizing border-box
+				transition all 0.225s ease
+				@media (max-width 599px)
+					display none
+			&:hover
+				&:before
+					transform rotate(45deg)
+					width 100px
+					margin-left -20px
+		&_lamp-wrap
+			width 21rem
+			height 22.5rem
+			padding 3.125rem 0
+			margin 0 auto 1.5625rem
+			border 4px solid #aaa
+			box-sizing border-box
+			background-color black
+			overflow hidden
+		&_lamp
+			position relative
+			width 100%
+			height 100%
+			background-position center
+			background-size contain
+			background-repeat no-repeat
+			transition all 0.225s ease
+			&:after
+				position absolute
+				display block
+				content ''
+				background-repeat no-repeat
+				background-position center
+				background-size contain
+				transition all 0.225s ease
+			&__simple
+				background-image url(../img/calculator/lamp1.png)
+				&:after
+					top -1rem
+					left -1.875rem
+					right -1.875rem
+					bottom -1rem
+					opacity 0
+					background-image url(../img/calculator/lamp1-on.png)
+					background-position 5.45rem -1rem
+			&__osram
+				background-image url(../img/calculator/lamp2.png)
+				&:after
+					top -2.9rem
+					left -5.6rem
+					right -5.6rem
+					bottom -2.9rem
+					opacity 0
+					background-image url(../img/calculator/lamp2-on.png)
+					background-position 5.45rem -2.89rem
+			&:hover
+				&:after
+					opacity 1
+		&_text
+			position relative
+			font-size 1.25rem
+			color $yellow
+			@media (max-width 767px)
+				font-size 14px
+			&:after
+				position absolute
+				display block
+				content ''
+				width 3.125rem
+				height 0.125rem
+				left calc(50% - 1.5625rem)
+				bottom -0.5rem
+				background-color $yellow
+				@media (max-width 599px)
+					display none
+		&_cost
+			margin 1.5625rem 0 1.25rem
+			font-size 1.5rem
+			color white
+			@media (max-width 659px)
+				font-size 16px
+		&_value
+			display inline-block
+			min-width 5rem
+			text-align right
+		&_visual
+			position relative
+			height 2px
+			margin 0 auto
+			background-color #383838
+			&:before,
+			&:after
+				position absolute
+				display block
+				content ''
+				width 0.625rem
+				height 0.625rem
+				top calc(50% - 0.3125rem)
+				background-color #aaa
+			&:before
+				left 0
+			&:after
+				right 0
+	&-flex
+		display flex
+		justify-content space-around
+		flex-wrap wrap
+		padding 4.375rem 0
+		&_item
+			display flex
+			justify-content center
+			align-content center
+			flex-basis 205px
+			width 33%
+			@media (max-width 634px)
+				width 100%
+				flex-basis initial
+	&_btn
+		.btn_span
+			width 250px
+			padding 13px 0
+			font-size 24px
+		&__disabled
+			opacity 0.5
+			pointer-events none
+			cursor default
+	&_units
+		display inline-block
+		font-size 20px
+		line-height 55px
+		color white
+	&-switch
+		position relative
+		display inline-block
+		width 60px
+		height 36px
+		margin 9px 5px
+		&_checkbox
+			display none
+			&:checked + .calculator-switch_slider:after
+				transform translateX(1.625rem)
+		&__disabled
+			opacity 0.5
+			pointer-events none
+			cursor default
+		&_slider
+			position absolute
+			top 0
+			left 0
+			right 0
+			bottom 0
+			border 2px solid $yellow
+			border-radius 35px
+			transition .4s
+			cursor pointer
+			&:after
+				position absolute
+				content ''
+				width 26px
+				height 26px
+				left 2px
+				bottom 3px
+				border-radius 50%
+				background-color $yellow
+				transition .225s
+	&-timeline
+		display flex
+		margin-left 10px
+		&__disabled
+			pointer-events none
+			cursor default
+		&_part
+			position relative
+			width 20%
+			height 3px
+			background-color $yellow
+			transition all 0.225s ease
+			cursor pointer
+			&:before
+				position absolute
+				display block
+				content ''
+				width 10px
+				height 10px
+				background-color $yellow
+				right 0
+				top calc(50% - 5px)
+				transition all 0.225s ease
+			&:after
+				position absolute
+				display block
+				right -1px
+				bottom -35px
+				font-size 18px
+				font-weight bold
+				color #aaa
+				transition all 0.225s ease
+			&:nth-child(1):after
+				content '0'
+			&:nth-child(2):after
+				content '1'
+			&:nth-child(3):after
+				content '2'
+			&:nth-child(4):after
+				content '3'
+			&:nth-child(5):after
+				content '4'
+			&:nth-child(6):after
+				content '5'
+			&:first-child
+				width 0
+			&__active
+				background-color white
+				&:before
+					background-color white
+				&:after
+					color white
+	&-total
+		margin-top 60px
+		opacity 0
+		transform scale(0.4)
+		transition .225s
+		&__active
+			opacity 1
+			transform scale(1)
+		&_text
+			font-size 1.5rem
+			color $yellow
+			text-transform uppercase
+			font-weight bold
+			&__white
+				color white
+			@media (max-width 659px)
+				font-size 16px
+				margin 0 0 5px
+		&_value
+			font-size 2rem
+			@media (max-width 659px)
+				font-size 16px
+		&_ruble
+			font-size 2rem
+			font-weight normal
+			@media (max-width 659px)
+				font-size 16px
+		&_link
+			margin 0.625rem auto 2.8125rem
+			font-size 18px
+			font-weight bold
+			text-decoration none
+			color white
+			transition all 0.225s ease
+			@media (max-width 499px)
+				font-size 16px
+			&:before,
+			&:after
+				margin 0 10px
+				font-size 24px
+				font-weight normal
+				vertical-align middle
+				color $yellow
+			&:before
+				content '»'
+			&:after
+				content '«'
+			&:hover,
+			&:focus
+				.calculator-total_details
+					border-color $yellow
+			&:active
+				.calculator-total_details
+					color $yellow
+		&_details
+			border-bottom 1px solid white
+			padding-bottom 2px
+			transition all 0.225s ease
+		&_value
+			min-width 5.625rem
+			display inline-block
+			text-align left
+
+/* why
+====================================================================================================*/
+
+.why
+	display flex
+	padding 3.125rem 0
+	box-sizing border-box
+	&_header
+		margin-bottom 5rem
+	.items
+		justify-content space-around
+		@media (max-width 1199px)
+			justify-content center
+	&-item
+		position relative
+		width 345px
+		@media (max-width 1199px)
+			margin 0 1rem 1.875rem 0
+			@media (max-width 399px)
+				width 300px
+				margin 0 0 1.5rem 0
+		&_number
+			position absolute
+			display block
+			width 40px
+			height 40px
+			left 15px
+			border-radius 50%
+			font-size 18px
+			font-weight bold
+			font-style normal
+			line-height 40px
+			text-align center
+			background-color $yellow
+			animation pulse 2s infinite
+		&_header
+			margin 0 0 1rem
+			padding-left 75px
+			font-size 16px
+			font-weight bold
+			text-transform uppercase
+			@media (max-width 399px)
+				font-size 14px
+			&:after
+				display block
+				content ''
+				width 40px
+				height 1px
+				margin-top 8px
+				background-color black
+		&_desc
+			padding-left 75px
+			font-size 16px
+			color #808080
+			@media (max-width 399px)
+				font-size 14px
+		&:nth-child(3n+2)
+			padding-top 60px
+			@media (max-width 1199px)
+				padding 0
+		&:nth-child(3n+3)
+			padding-top 120px
+			@media (max-width 1199px)
+				padding 0
+
+@keyframes pulse
+	0%
+		box-shadow: 0 0 0 0 rgba(255,197,1,0.4)
+	70%
+		box-shadow: 0 0 0 15px rgba(255,197,1,0)
+	100%
+		box-shadow: 0 0 0 0 rgba(255,197,1,0)
+
+
+/* offer2
+====================================================================================================*/
+
+#offer2
+	padding 0 0 120px
+	.offer-left_header__yellow
+		color $yellow
+	.offer-right_lamp
+		background-image url(../img/why/offer2-lamp.png)
+	.form-item
+		.items
+			margin 0 -10px
+	.form-item__select
+		margin 0 10px
+		&:after
+			top 60px
+	.btn_span
+		padding-top 12px
+		padding-bottom 12px
+
+
+/* steps
+====================================================================================================*/
+
+.steps
+	padding 3.125rem 0
+	background url(../img/steps/bg.jpg) top center
+	background-size cover
+	color white
+	&_header
+		margin-bottom 3.5rem
+		color white
+		&__yellow
+			color $yellow
+	&_items
+		display grid
+		grid-template-columns 279px 279px 279px 279px
+		grid-gap 48px
+		justify-content center
+		@media (max-width 1279px)
+			grid-gap 0
+		@media (max-width 1136px)
+			grid-template-columns 260px 260px
+			grid-template-rows 275px 275px
+			grid-column-gap 100px
+		@media (max-width 659px)
+			grid-template-columns 250px 250px
+			grid-column-gap 0
+		@media (max-width 520px)
+			grid-template-columns 300px
+			grid-template-rows auto
+			grid-row-gap 20px
+	&-item
+		position relative
+		padding 15px 5px 1.5rem
+		box-sizing border-box
+		text-align center
+		&:last-child:after
+			display none
+		&:nth-child(2):after
+			@media (max-width 1136px)
+				display none
+		&_icon
+			position relative
+			display block
+			width 80px
+			height 80px
+			margin 0 auto
+			border-radius 50%
+			background-repeat no-repeat
+			background-position center
+			background-color $yellow
+			&:before
+				position absolute
+				display block
+				content ''
+				width: 110px
+				height: 110px
+				top: -19%
+				left: -19%
+				border 1px solid $yellow
+				box-sizing border-box
+				border-radius 50%
+				transition all 0.225s ease
+			&__1
+				background-image url("../img/steps/1.png")
+			&__2
+				background-image url("../img/steps/2.png")
+			&__3
+				background-image url("../img/steps/3.png")
+			&__4
+				background-image url("../img/steps/4.png")
+		&:after
+			position absolute
+			display block
+			content ''
+			width 32px
+			height 21px
+			top 60px
+			right -40px
+			background-image url(../img/steps/arrow-right.png)
+			transition all 0.225s ease
+			@media (max-width 1279px)
+				right -16px
+			@media (max-width 1136px)
+				right -66px
+			@media (max-width 659px)
+				right -16px
+			@media (max-width 520px)
+				display none
+		&:hover
+			.steps-item_icon:before
+				transform scale(1.06)
+			&:after
+				transform translateX(-5px)
+		&_header
+			margin 30px 0 15px
+			font-size 18px
+			font-weight bold
+			text-transform uppercase
+			color $yellow
+		&_desc
+			margin 0
+			font-size 16px
+
+/* delivery
+====================================================================================================*/
+
+.delivery
+	padding 3.125rem 0
+	background url(../img/delivery/bg-hits.jpg) top center
+	background-size cover
+	.container
+		>.items
+			justify-content space-around
+			@media (max-width 959px)
+				justify-content center
+			.item
+				margin 0 15px
+				.items
+					flex-direction column
+	&_header
+		position relative
+		margin 2.5rem 0
+		padding 2.5rem 0
+		z-index 1
+		font-size 3rem
+		font-weight bold
+		text-transform uppercase
+		text-align center
+		&:before
+			position absolute
+			display block
+			content ''
+			width 60px
+			height 100px
+			top calc(50% - 50px)
+			left calc(50% - 30px)
+			z-index -1
+			border 4px solid $yellow
+			box-sizing border-box
+			transition all 0.225s ease
+			@media (max-width 599px)
+				display none
+		&:hover:before
+			transform: rotate(45deg)
+			width: 100px
+			margin-left: -21px
+	.delivery-item
+		position relative
+		width 440px
+		height 220px
+		margin-bottom 25px
+		z-index 1
+		box-shadow 1px 2px 10px 0 rgba(0,0,0,0.1)
+		background-color white
+		cursor pointer
+		@media (max-width 959px)
+			width 290px
+			height 240px
+		&_icon
+			position relative
+			display block
+			width 85px
+			height 85px
+			margin 40px auto 0
+			border-radius 50%
+			z-index 1
+			background-color #f3f3f3
+			background-repeat no-repeat
+			background-position center
+			transition all 0.225s ease
+			&__1
+				background-image url("../img/delivery/icon1.png")
+			&__2
+				background-image url("../img/delivery/icon2.png")
+			&__3
+				background-image url("../img/delivery/icon3.png")
+			&__4
+				background-image url("../img/delivery/icon4.png")
+			&__5
+				background-image url("../img/delivery/icon5.png")
+			&__6
+				background-image url("../img/delivery/icon6.png")
+		&_header
+			margin 25px 0
+			z-index 2
+			font-size 18px
+			font-weight bold
+			text-transform uppercase
+			text-align center
+			transition all 0.225s ease
+			@media (max-width 959px)
+				font-size 14px
+		&_info
+			position absolute
+			top 0
+			left 0
+			right 0
+			bottom 0
+			z-index 1
+			opacity 0
+			transition all 0.225s ease
+			&:before,
+			&:after
+				position absolute
+				display block
+				content ''
+				background-color $yellow
+			&:before
+				height 10px
+				left 10px
+				right -10px
+				bottom -10px
+			&:after
+				width 10px
+				top 10px
+				right -10px
+				bottom -10px
+		&:before,
+		&:after
+			position absolute
+			display block
+			content ''
+			top 0
+			left 0
+			right 0
+			bottom 0
+			opacity 0
+			z-index -1
+			transition all 0.225s ease
+		&:before
+			background url(../img/delivery/bg.jpg) top center
+			background-size cover
+		&:after
+			background-color rgba(0, 0, 0, 0.5)
+		&:hover
+			&:before,
+			&:after,
+			.delivery-item_info
+				opacity 1
+			.delivery-item_icon
+				background-color white
+			.delivery-item_header
+				color white
+		&_eye
+			position absolute
+			display block
+			right -10px
+			bottom -10px
+			z-index 1
+			border 40px solid transparent
+			border-right-color $yellow
+			border-bottom-color $yellow
+			cursor default
+			&:before
+				position absolute
+				display block
+				content ''
+				width 36px
+				height 22px
+				background-image url(../img/delivery/eye.png)
+			&:hover
+				+.delivery-item_desc
+					opacity 1
+		&_desc
+			position absolute
+			top 0
+			left 0
+			right 0
+			bottom 0
+			opacity 0
+			border 4px solid $yellow
+			background url(../img/delivery/bg.jpg) top center
+			background-size cover
+			transition all 0.225s ease
+			&:before
+				position absolute
+				display block
+				content ''
+				top 0
+				left 0
+				right 0
+				bottom 0
+				background-color rgba(0, 0, 0, 0.8)
+		&_text
+			position relative
+			padding 20px 25px
+			font-size 12px
+			color white
+			@media (max-width 959px)
+				padding 5px
+		&__active
+			.delivery-item_desc
+				opacity 1
+
+/* about
+====================================================================================================*/
+
+.about
+	position relative
+	padding 3.125rem 0
+	text-align center
+	.items
+		justify-content center
+		flex-grow 1
+	&-bg
+		position absolute
+		width 1920px
+		left calc(50% - 960px)
+		&_lamp1
+			position absolute
+			width 273px
+			height 280px
+			top -50px
+			right 200px
+			background-image url(../img/about/lamp1.png)
+		&_lamp2
+			position absolute
+			width 271px
+			height 331px
+			top 370px
+			left 30px
+			background-image url(../img/about/lamp2.png)
+		&_lamp3
+			position absolute
+			width 254px
+			height 287px
+			top 330px
+			right 30px
+			background-image url(../img/about/lamp3.png)
+		&_lamp4
+			position absolute
+			width 369px
+			height 340px
+			top 760px
+			left 50px
+			background-image url(../img/about/lamp4.png)
+		&_lamp5
+			position absolute
+			width 316px
+			height 397px
+			top 610px
+			right 15px
+			background-image url(../img/about/lamp5.png)
+	&_header
+		margin-bottom 3rem
+		@media (max-width 1079px)
+			margin 0 0 20px
+			&:before
+				display none
+	&_img
+		width 460px
+		height auto
+		margin 0 20px 20px 0
+		border 10px solid #f4f4f4
+		transition all 0.225s ease
+		background url("../img/about/img.jpg") center
+		background-size cover
+		&:hover
+			border-color $yellow
+		@media (max-width 1079px)
+			height 400px
+			background-position center -50px
+		@media (max-width 499px)
+			display none
+	&_desc
+		width 550px
+		margin -5px 10px 0 0
+		font-size 17px
+		text-align justify
+		@media (max-width 1079px)
+			width 700px
+		@media (max-width 759px)
+			width 100%
+			padding 0 10px
+			font-size 16px
+		@media (max-width 499px)
+			font-size 14px
+	&_text
+		margin-bottom 20px
+	&_subtitle
+		margin 2.5rem 0
+		font-size 24px
+		font-weight bold
+		text-transform uppercase
+		text-align center
+		@media (max-width 759px)
+			font-size 18px
+		@media (max-width 499px)
+			font-size 16px
+
+/* numbers
+====================================================================================================*/
+
+.numbers
+	padding 3.125rem 0
+	background url(../img/numbers/bg.jpg) top center
+	background-size cover
+	color white
+	&_items
+		display grid
+		grid-template-columns repeat(4, 250px)
+		justify-content space-around
+		@media (max-width 1059px)
+			grid-template-columns 250px 250px
+			grid-template-rows auto auto
+			justify-content center
+			grid-gap 25px
+		@media (max-width 539px)
+			grid-template-columns 250px
+			grid-template-rows repeat(4, auto)
+	&-item
+		width 250px
+		margin 0 5px
+		text-align center
+		&_icon
+			display block
+			width 65px
+			height 65px
+			margin 0 auto
+			background-position center
+			background-repeat no-repeat
+			&__1
+				background-image url("../img/numbers/icon1.png")
+			&__2
+				background-image url("../img/numbers/icon2.png")
+			&__3
+				background-image url("../img/numbers/icon3.png")
+			&__4
+				background-image url("../img/numbers/icon4.png")
+		&_pretitle
+			margin-bottom 10px
+			font-size 16px
+			text-transform uppercase
+			@media (max-width 1059px)
+				font-size 14px
+		&_number
+			font-size 46px
+			font-weight bold
+			line-height 1em
+			text-transform uppercase
+			@media (max-width 1059px)
+				font-size 36px
+		&_subtitle
+			font-size 22px
+			font-weight bold
+			line-height 1em
+			text-transform uppercase
+			@media (max-width 1059px)
+				font-size 16px
+
+/* certificates
+====================================================================================================*/
+
+.certificates
+	padding 3.125rem 0
+	&_header
+		margin-bottom 3rem
+	&-item
+		&_img
+			position relative
+			display block
+			width 270px
+			height 400px
+			margin 0 auto
+			border 10px solid #f4f4f4
+			background-position center
+			background-size cover
+			transition all 0.225s ease
+			box-sizing border-box
+			@media (max-width 665px)
+				width 230px
+				height 330px
+			&__1
+				background-image url("../img/certificates/1.jpg")
+			&__2
+				background-image url("../img/certificates/2.jpg")
+			&__3
+				background-image url("../img/certificates/3.jpg")
+			&__4
+				background-image url("../img/certificates/4.jpg")
+			&__5
+				background-image url("../img/certificates/5.jpg")
+			&__6
+				background-image url("../img/certificates/6.jpg")
+			&__7
+				background-image url("../img/certificates/7.jpg")
+			&__8
+				background-image url("../img/certificates/8.jpg")
+			&__9
+				background-image url("../img/certificates/9.jpg")
+			&__10
+				background-image url("../img/certificates/10.jpg")
+			&__11
+				background-image url("../img/certificates/11.jpg")
+			&__12
+				background-image url("../img/certificates/12.jpg")
+			&__13
+				background-image url("../img/certificates/13.jpg")
+			&:before,
+			&:after
+				position absolute
+				display block
+				content ''
+				opacity 0
+				transition all 0.225s ease
+			&:before
+				top 0
+				left 0
+				right 0
+				bottom 0
+				background-color rgba(0, 0, 0, 0.8)
+			&:after
+				width 32px
+				height 32px
+				top calc(50% - 16px)
+				left calc(50% - 16px)
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABGlBMVEUAAAD/xAD/xgD/xQH/xQH/xQH/xQH/xQH/xQH/xQL/xAD/vwD/yAD/xQH/xQH/xQH/xQL/xQD/zAD/xgH/xAH/xAL/xAH/xQH/xQH/xQD/yAD/xQH/xQH/xAD/xwD//wD/vwD/xgD/xQD/xQH/xQL/tgD/xQH/xQH/xQD/xgL/xQH/xAH/vwD/xgH/xgD/xAD/xQH/xgL/wgD/xAD/xQH/xgD/xQH/xQD/xgL/xgD/xQH/xQL/xAD/xQD/xgD/xQD/xQL/xQH/xQH/xgD/xgD/xQH/xQL/xgD/xQH/xQH/xQH/xQL/yQD/xgD/xAL/xQD/xgD/wwD/zAD/xgD/xAL/xQH/xQD/xgH/wwD/xAD/xAD/xgD/xQEAAAAeIY0mAAAAXHRSTlMAGmev0On548meUgwutP74khYK9MSl0fvzchzNs1spAgg2adiiB+TvXY79uwS2Gz3ckxVX4Fq5c5wS8Kgnbm85jfrULQn8pHTlseGME0eHfF4vBVCCxVj9M5RWWah46wIAAAABYktHRACIBR1IAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QYaEB0j4AWewgAAAadJREFUOMuFU+dawkAQjEDEoDQhxkoHNSoqsQEqNTRRLDRl3v85vEtySQj5dH/czu7MXbZ84Thmax6vj1/3bwiBTc7FtoIhMAtHok56W9DoWFzckSjY3Vvm9w9I8vAokSQ4lc5kSZTL2/kCcHxixalTGTg7t94n9y+KS09eXgHXZiQQ3llUiQcUVn8Ix0WngAsAN0YZQcD8/u3dFoMicK/PJ4RD814BDwyWeWQ14AGOTEEFVRPngEfqvUDCVfAEPFPvQyzpKqgBdep5xPX6CpVKJYQGOZstmmir6FC/DlET3MGyrpbpoU+dHzv6OB6q1WoDA3K+DGliCAjUb0BKudbwCrwZg067CkbAuzHTjKugD7lE/WYYWfMbTbww+NEw2uMiRr/UWt2hgT59wJcOo7uQL1e2OQYmDO8BVyUHP50hPLevhQ/Y6c/xDPi24vwZmZ5YNuMPHx2n9GMpzq9Jgs891drc8HXUb5Bf41uCpNgeVW60Jag9fRmTOfcjQZ3aFPn7LFuVHNf6U1Soi6XKH5/rnb7w9s46mq4onLYgCuU/xeBPAacM6r+LuGNk6Q//fwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0wNi0yNlQxNjoyOTozNSswMjowMOr839AAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMDYtMjZUMTY6Mjk6MzUrMDI6MDCboWdsAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==')
+				transform translateY(200px)
+			&:hover
+				border-color $yellow
+				&:before,
+				&:after
+					opacity 1
+				&:after
+					transform translateY(0)
+	&_slider
+		width 95%
+		margin 0 auto
+		.slick-arrow
+			position absolute
+			width 30px
+			height 35px
+			border 1px solid white
+			background-color #505050
+			background-size 13px 23px
+			background-position center
+			background-repeat no-repeat
+			transition all 0.225s ease
+			&:hover
+				background-color $yellow
+			&:before
+				display none
+		.slick-prev
+			background-image url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+			left -1.875rem
+			right auto
+		.slick-next
+			background-image url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+			right -1.875rem
+			left auto
+
+/* reviews
+====================================================================================================*/
+
+.reviews
+	padding 3.125rem 0
+	background url(../img/reviews/bg.jpg) top center
+	background-size cover
+	&_header
+		margin-bottom 3rem
+	.items
+		justify-content center
+		flex-wrap nowrap
+		padding 30px
+		@media (max-width 599px)
+			flex-wrap wrap
+			padding 0 30px
+	&-item
+		&:hover
+			.reviews_photo
+				border-color $yellow
+	&_msg
+		position relative
+		width 340px
+		height 280px
+		margin-right 20px
+		padding 25px 30px
+		background-color white
+		font-size 16px
+		text-align justify
+		@media (max-width 1279px)
+			font-size 14px
+		@media (max-width 599px)
+			height auto
+			margin 0
+			padding 15px
+			font-size 13px
+		&:before
+			position absolute
+			display block
+			content ''
+			width 60px
+			height 60px
+			top -30px
+			left -30px
+			border-radius 50%
+			background-color $yellow
+			background-image url(../img/reviews/coma.png)
+			background-repeat no-repeat
+			background-position center
+			@media (max-width 599px)
+				display none
+	&_author
+		width 178px
+		@media (max-width 599px)
+			order -1
+			margin-bottom 15px
+	&_photo
+		width 170px
+		height 250px
+		border 4px solid white
+		background-size cover
+		background-position top center
+		transition all 0.225s ease
+		@media (max-width 599px)
+			height 190px
+		&__1
+			background-image url("../img/reviews/photo1.png")
+		&__2
+			background-image url("../img/reviews/photo2.png")
+		&__3
+			background-image url("../img/reviews/photo3.png")
+		&__4
+			background-image url("../img/reviews/photo4.png")
+	&_name
+		font-size 18px
+		font-weight bold
+		color #343434
+		text-transform uppercase
+		margin-top 20px
+		@media (max-width 1199px)
+			text-align center
+		@media (max-width 599px)
+			font-size 16px
+			margin-top 10px
+	&_slider
+		width 95%
+		margin 0 auto
+		.slick-arrow
+			position absolute
+			width 30px
+			height 35px
+			border 1px solid white
+			background-color #505050
+			background-size 13px 23px
+			background-position center
+			background-repeat no-repeat
+			transition all 0.225s ease
+			&:hover
+				background-color $yellow
+			&:before
+				display none
+		.slick-prev
+			background-image url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+			left -1.875rem
+			right auto
+		.slick-next
+			background-image url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E")
+			right -1.875rem
+			left auto
+
+/* contacts
+====================================================================================================*/
+
+.contacts
+	.container
+		@media (max-width 799px)
+			align-items center
+	&-bar
+		background-color $yellow
+		padding 1.25rem 0
+		text-transform uppercase
+	.items
+		@media (max-width 799px)
+			flex-direction column
+	&-item
+		position relative
+		height 24px
+		padding 20px 15px
+		&_text
+			margin-left 50px
+			font-size 16px
+			font-weight bold
+			line-height 24px
+			text-decoration none
+			color #343434
+			white-space nowrap
+			@media (max-width 899px)
+				font-size 14px
+			@media (max-width 399px)
+				font-size 12px
+		&_icon
+			position absolute
+			width 24.5px
+			height 24.5px
+			&:after
+				position absolute
+				display block
+				content ''
+				width 49px
+				height 49px
+				top -50%
+				left -50%
+				background-image url(../img/contacts/braces.png)
+				transition all 0.225s ease
+		&:hover
+			.contacts-item_icon
+				&:after
+					transform rotate(90deg)
+
+.map
+	height 37.5rem
+	filter grayscale(100%)
+
+/* footer
+====================================================================================================*/
+
+.footer
+	padding 2.5rem 0
+	background-color #343434
+	.items
+		@media (max-width 699px)
+			flex-direction column
+			align-items center
+	.item
+		width 33%
+	.brand
+		width 200px
+		box-sizing border-box
+		&_url
+			display: block
+		&_logo
+			display block
+			height: 25px
+			background url(../img/header/logo.png) no-repeat
+			background-size contain
+		&_slogan
+			font-size 14.9px
+			line-height: 20px
+			color white
+	.developer
+		height 45px
+		color white
+		font-size 16px
+		line-height: 45px
+		text-align center
+		@media (max-width 699px)
+			margin-bottom 5px
+		&_name
+			color $yellow
+	.social
+		display flex
+		height 45px
+		margin 0 -5px
+		text-align right
+		&_link
+			display block
+			width 45px
+			height 45px
+			margin 0 5px
+			background-color $yellow
+			background-position center
+			background-repeat no-repeat
+			transition all 0.225s ease
+			@media (max-width 699px)
+				width 40px
+				height 40px
+			&:hover
+				background-color white
+			&__vk
+				background-image url(../img/footer/vk.png)
+			&__fb
+				background-image url(../img/footer/fb.png)
+			&__tw
+				background-image url(../img/footer/tw.png)
+			&__inst
+				background-image url(../img/footer/inst.png)
+			&__od
+				background-image url(../img/footer/od.png)
+			&__pin
+				background-image url(../img/footer/pin.png)
+
+
+/* modals
+====================================================================================================*/
+
+.fancybox-container
+	font-family 'Proxima Nova'
+.fancybox-bg
+	background-color: black
+.fancybox-close-small
+	position absolute
+	width 45px
+	height 45px
+	top 0
+	right 0
+	opacity 0.8
+	color white
+	&:hover
+		opacity 1
+.fancybox-content
+	background-color transparent
+
+.modal
+	position relative
+	display none
+	padding 50px 20px
+	border 10px solid #5e5c5a
+	border-radius 0
+	background-color: #171717
+	line-height 1.4
+	color white
+	overflow visible
+	&:before
+		position absolute
+		display block
+		content ''
+		width 224px
+		height 409px
+		left -112px
+		bottom 0
+		z-index -1
+		background-image: url(../img/header/offer-lamp.png)
+		@media (max-width 749px)
+			display none
+	&_header
+		margin 0 0 30px 0
+		font-size 1.75rem
+		font-weight bold
+		text-transform uppercase
+		text-align center
+		color white
+		@media (max-width 659px)
+			font-size 16px
+		&:after
+			display block
+			content ''
+			width 40px
+			height 3px
+			margin 10px auto 0
+			background-color $yellow
+	&_h3
+		margin-top 20px
+		margin-bottom 10px
+		font-size 24px
+		font-weight 500
+	&_h4
+		margin 10px 0
+		font-size 18px
+		font-weight 500
+	&_list
+		padding-left 15px
+
+#calculation-details
+	.modal
+		overflow-y auto
+		max-height 500px
+		padding 30px 20px

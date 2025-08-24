@@ -1,0 +1,29 @@
+{
+  "name": "osram",
+  "version": "1.0.0",
+  "description": "Сайт лендинг для резюме",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "author": "PaHuMbIu",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-cli": "^2.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gh-pages": "^6.0.0",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylus": "^3.0.1",
+    "gulp-uglify": "^3.0.2"
+  }
+}
